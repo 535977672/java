@@ -1,0 +1,15 @@
+package test;
+
+public class main {
+
+    public static void main(String arg[]) {
+        String wen = "大数据大数据的撒发快递师傅";
+        String pass = "123456789";
+        
+        String str = Enande.decrypt(wen, pass);
+        System.out.println(str);
+        
+        
+        System.out.println(Enande.encrypt(str, pass));
+    }
+}
