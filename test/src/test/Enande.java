@@ -54,40 +54,7 @@ public class Enande {
      * @return 密文
      */
     public static String encrypt2(String sourceString, String password) {
-    	String source = Base64.getEncoder().encodeToString(sourceString.getBytes(StandardCharsets.UTF_8));
-        return Base64.getEncoder().encodeToString(Enande.encrypt(source, password).getBytes(StandardCharsets.UTF_8));
-    }
-
-    /**
-     *
-     * @param sourceString
-     * @param password
-     * @return 明文
-     */
-    public static String decrypt2(String sourceString, String password) {
-    	String source = new String(Base64.getDecoder().decode(sourceString), StandardCharsets.UTF_8);
-        return new String(Base64.getDecoder().decode(Enande.decrypt(source, password)), StandardCharsets.UTF_8);
-    }
-
-    
-    /**
-     * @param sourceString
-     * @param password
-     * @return 密文
-     */
-    public static String encrypt3(String sourceString, String password) {
-    	String source = sourceString.replaceAll("\\s", "");
-        return Enande.encrypt(source, password);
-    }
-
-    /**
-     *
-     * @param sourceString
-     * @param password
-     * @return 明文
-     */
-    public static String decrypt3(String sourceString, String password) {
-        return Enande.decrypt(sourceString, password);
+    	return Base64.getEncoder().encodeToString(Enande.encrypt(sourceString, password).replaceAll("\\s", "").getBytes(StandardCharsets.UTF_8));
     }
     
     public static String md5Encode(String content) {
